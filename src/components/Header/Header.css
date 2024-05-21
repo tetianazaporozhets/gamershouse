@@ -1,0 +1,8 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 70px;
+}
+.user-panel {
+  display: flex;
+}

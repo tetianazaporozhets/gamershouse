@@ -1,0 +1,36 @@
+.product {
+  border-radius: 15px;
+  background-color: #ffe1dd;
+}
+.product__img {
+  height: 280px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+.product__subtitle {
+  display: inline-block;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: black;
+  margin: 0 0 13px 0;
+}
+.product__brand {
+  font-size: 12px;
+  line-height: 16px;
+  margin: 0 0 24px 0;
+}
+.product__info {
+  padding: 20px 20px 15px 20px;
+}
+.product__price {
+  display: flex;
+  justify-content: space-between;
+}
+.price {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 36px;
+  margin: 0;
+}
