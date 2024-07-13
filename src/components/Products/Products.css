@@ -2,7 +2,10 @@
   font-weight: 700;
   font-size: 40px;
   line-height: 44px;
-  margin: 0 0 100px 0;
+  background-image: var(--gradient-title);
+  color: transparent;
+  background-clip: text;
+  margin: 0 0 85px 0;
 }
 .products {
   display: grid;

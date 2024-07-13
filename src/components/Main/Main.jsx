@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import "./Main.css";
 import MySlider from "../MySlider/MySlider";
 
@@ -11,4 +11,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default memo(Main);

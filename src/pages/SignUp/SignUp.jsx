@@ -1,8 +1,14 @@
-import React from "react";
+import React, { memo } from "react";
 import "./SignUp.css";
+import ReactHookForm from "../../components/ReactHookForm/ReactHookForm";
 
 const SignUp = () => {
-  return <div>Si</div>;
+  return (
+    <div className="registration">
+      <h2 className="registration__subtitle">Sign up</h2>
+      <ReactHookForm />
+    </div>
+  );
   //  <div>
   //    <Link to="/signup">
   //      <img className="signup__icon" src={SignUpIcon} alt="" />
@@ -11,4 +17,4 @@ const SignUp = () => {
   //  </div>
 };
 
-export default SignUp;
+export default memo(SignUp);

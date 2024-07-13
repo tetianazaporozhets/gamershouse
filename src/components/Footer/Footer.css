@@ -22,6 +22,12 @@
   gap: 60px;
 }
 .footer__item {
+  text-decoration: none;
+  color: var(--black-color);
+}
+.footer__item:hover {
+  color: var(--hover-color);
+  transition: 0.5s all ease;
 }
 .footer__icons {
   position: absolute;
@@ -33,4 +39,17 @@
   justify-content: space-between;
   align-items: center;
   z-index: 1;
+}
+.footer__icon:hover {
+  cursor: pointer;
+}
+.footer__phone-number {
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--black-color);
+}
+.footer__phone-number:hover {
+  cursor: pointer;
+  color: var(--hover-color);
+  transition: 0.5s all ease;
 }

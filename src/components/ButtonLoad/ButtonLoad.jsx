@@ -1,8 +1,12 @@
-import React from "react";
+import { memo } from "react";
 import "./ButtonLoad.css";
 
-const ButtonLoad = () => {
-  return <button className="button__load">Load more</button>;
+const ButtonLoad = ({ onClick }) => {
+  return (
+    <button className="button__load" onClick={onClick}>
+      Load more
+    </button>
+  );
 };
 
-export default ButtonLoad;
+export default memo(ButtonLoad);
