@@ -1,0 +1,31 @@
+@import "../../_variables";
+
+.registration {
+  min-height: calc(100vh - 348px);
+}
+
+.registration h2 {
+  background-image: $gradient-title;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 44px;
+  margin: 0 0 40px 0;
+  @media screen and (max-width: 1439px) {
+    font-size: 35px;
+    line-height: 39px;
+  }
+  @media screen and (max-width: 1023px) {
+    font-size: 28px;
+    line-height: 32px;
+  }
+  @media screen and (max-width: 767px) {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+.error-message {
+  color: red;
+}

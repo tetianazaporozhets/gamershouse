@@ -1,4 +1,4 @@
-import "./Products.css";
+import styles from "./Products.module.scss";
 import React, { memo, useState } from "react";
 import Product from "../Product/Product";
 import ButtonLoad from "../ButtonLoad/ButtonLoad";
@@ -11,8 +11,8 @@ const Products = ({ products = [] }) => {
   }, []);
   return (
     <div>
-      <h2 className="subtitle">Hot new items</h2>
-      <div className="products">
+      <h2 className={styles.subtitle}>Hot new items</h2>
+      <div className={styles.products}>
         {products.slice(0, visibleCount).map((product) => (
           <Product key={product.id} product={product} />
         ))}

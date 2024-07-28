@@ -1,7 +1,7 @@
 import React, { memo, useCallback, useContext, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import PixlIcon from "../../assets/icons/pixl.svg";
-import "./Header.css";
+import styles from "./Header.module.scss";
 import Search from "../Search/Search";
 import CartContext from "../../components/CartContext";
 
@@ -31,36 +31,27 @@ const Header = ({ searchQuery, setSearchQuery, products, onSelectProduct }) => {
     navigate("/home");
   };
   return (
-    <div className="header">
-      <img src={PixlIcon} onClick={handleIconClick} alt="" />
+    <div className={styles.header}>
+      <img src={PixlIcon} onClick={handleIconClick} alt="Icon" />
       <Search
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
         products={products}
         onSelectProduct={handleSelectProduct}
       />
-      <div className="header__panel">
-        <nav className="header__nav">
-          <NavLink className="header__link" to="/home">
-            Home
-          </NavLink>
-          <NavLink
-            className="header__link"
-            to="/cart"
-            onClick={handleCartClick}
-          >
-            Cart{" "}
-            {totalQuantity > 0 && (
-              <span className="header__count">{totalQuantity}</span>
-            )}
-          </NavLink>
-          <NavLink className="header__link" to="/signup">
-            Sign up
-          </NavLink>
-        </nav>
-      </div>
+      <nav>
+        <NavLink className={styles.link} to="/home">
+          Home
+        </NavLink>
+        <NavLink className={styles.link} to="/cart" onClick={handleCartClick}>
+          Cart {totalQuantity > 0 && <span>{totalQuantity}</span>}
+        </NavLink>
+        <NavLink className={styles.link} to="/signup">
+          Sign up
+        </NavLink>
+      </nav>
       {showEmptyCartMessage && (
-        <div className="header__cart-message show">Cart is empty</div>
+        <div className={`${styles.message} ${styles.show}`}>Cart is empty</div>
       )}
     </div>
   );

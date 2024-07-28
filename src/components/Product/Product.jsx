@@ -1,13 +1,10 @@
 import React, { memo, useCallback, useContext } from "react";
-import "./Product.css";
+import styles from "./Product.module.scss";
 import ButtonAddToCart from "../ButtonAddToCart/ButtonAddToCart";
 import { Link, useNavigate } from "react-router-dom";
 import { CartContext } from "../CartContext";
 
-const Product = ({ product, additionalClassName }) => {
-  const productClasses = additionalClassName
-    ? `product product-page__product`
-    : `product`;
+const Product = ({ product }) => {
   const { handleAddToCart } = useContext(CartContext);
   const navigate = useNavigate();
 
@@ -17,15 +14,17 @@ const Product = ({ product, additionalClassName }) => {
   }, [handleAddToCart, product, navigate]);
 
   return (
-    <div className={productClasses}>
-      <img className="product__img" src={product.image} alt={product.name} />
-      <div className="product__info">
-        <Link to={`/product-page/${product.id}`}>
-          <h4 className="product__subtitle">{product.name}</h4>
-        </Link>
-        <p className="product__brand">{product.brand}</p>
-        <div className="product__price">
-          <p className="price">{product.price}zł</p>
+    <div className={styles.product}>
+      <img className={styles.img} src={product.image} alt={product.name} />
+      <div className={styles.info}>
+        <div className={styles.content}>
+          <Link to={`/product-page/${product.id}`}>
+            <h4 className={styles.name}>{product.name}</h4>
+          </Link>
+          <p className={styles.brand}>{product.brand}</p>
+        </div>
+        <div className={styles.price__box}>
+          <p className={styles.price}>{product.price}zł</p>
           <ButtonAddToCart product={product} onAddToCart={addToCart} />
         </div>
       </div>

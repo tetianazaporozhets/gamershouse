@@ -1,0 +1,11 @@
+@import "../../_variables";
+
+.product__page {
+  min-height: calc(100vh - 348px);
+}
+.product__page h3 {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 36px;
+  margin: 0 0 40px 0;
+}

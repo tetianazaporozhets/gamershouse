@@ -1,6 +1,6 @@
 import React, { memo, useMemo } from "react";
 import { useParams } from "react-router-dom";
-import "./ProductPage.css";
+import style from "./ProductPage.module.scss";
 import ProductsDetail from "../../components/ProductsDetail/ProductsDetail";
 
 const ProductPage = ({ products }) => {
@@ -11,13 +11,12 @@ const ProductPage = ({ products }) => {
   );
 
   if (!product) {
-    return <div>Продукт не найден</div>;
+    return <div>Product not found.</div>;
   }
 
   return (
-    <div className="product-page">
-      <h3 className="product-page__subtitle">{product.name}</h3>
-      <div className="product-page__border"></div>
+    <div className={style.product__page}>
+      <h3>{product.name}</h3>
       <ProductsDetail product={product} />
     </div>
   );

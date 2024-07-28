@@ -1,9 +1,0 @@
-.button__addtocart {
-  background: var(--button-light-color);
-  width: 120px;
-  padding: 13px 29px 13px 29px;
-  color: var(--button-text-color);
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-}

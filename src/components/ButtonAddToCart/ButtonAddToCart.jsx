@@ -1,12 +1,12 @@
 import { memo } from "react";
-import "./ButtonAddToCart.css";
+import styles from "./ButtonAddToCart.module.scss";
 
 const ButtonAddToCart = ({ product, onAddToCart }) => {
   const handleClick = () => {
     onAddToCart(product);
   };
   return (
-    <button className="button__addtocart" onClick={handleClick}>
+    <button className={styles.button} onClick={handleClick}>
       Add to cart
     </button>
   );

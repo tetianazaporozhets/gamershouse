@@ -1,6 +1,8 @@
 import React, { memo } from "react";
-import "./ReactHookForm.css";
+import style from "./ReactHookForm.module.scss";
 import { useForm } from "react-hook-form";
+import ButtonRegister from "../ButtonRegister/ButtonRegister";
+import { useNavigate } from "react-router-dom";
 
 const ReactHookForm = () => {
   const { register, handleSubmit, formState, getValues } = useForm({
@@ -11,15 +13,27 @@ const ReactHookForm = () => {
       confirmPassword: "",
     },
   });
-  const handleSubmitForm = () => {
+
+  const navigate = useNavigate();
+
+  const onSubmit = () => {
     console.log("Form submit");
+    navigate("/thank-you");
   };
+  const onError = (errors) => {
+    console.log("Form errors", errors);
+  };
+
   return (
-    <form className="form" onSubmit={handleSubmit(handleSubmitForm)} action="">
-      <div className="form__field">
+    <form
+      className={style.form}
+      onSubmit={handleSubmit(onSubmit, onError)}
+      action=""
+    >
+      <div className={style.field}>
         <label htmlFor="name">Name</label>
         <input
-          className="form__input"
+          className={style.input}
           {...register("name", {
             required: "Field is required",
             minLength: {
@@ -33,13 +47,15 @@ const ReactHookForm = () => {
           placeholder="Enter name"
         />
         {formState.errors.name && (
-          <p className="error-message">{formState.errors.name.message}</p>
+          <p className={style.error__message}>
+            {formState.errors.name.message}
+          </p>
         )}
       </div>
-      <div className="form__field">
+      <div className={style.field}>
         <label htmlFor="email">Email adress</label>
         <input
-          className="form__input"
+          className={style.input}
           {...register("email", { required: "Field is required" })}
           type="email"
           id="email"
@@ -47,13 +63,15 @@ const ReactHookForm = () => {
           placeholder="Enter email"
         />
         {formState.errors.email && (
-          <p className="error-message">{formState.errors.email.message}</p>
+          <p className={style.error__message}>
+            {formState.errors.email.message}
+          </p>
         )}
       </div>
-      <div className="form__field">
+      <div className={style.field}>
         <label htmlFor="password">Password</label>
         <input
-          className="form__input"
+          className={style.input}
           {...register("password", {
             required: "Field is required",
             minLength: {
@@ -67,13 +85,15 @@ const ReactHookForm = () => {
           placeholder="Enter password"
         />
         {formState.errors.password && (
-          <p className="error-message">{formState.errors.password.message}</p>
+          <p className={style.error__message}>
+            {formState.errors.password.message}
+          </p>
         )}
       </div>
-      <div className="form__field">
+      <div className={style.field}>
         <label htmlFor="confirmPassword">Confirm password</label>
         <input
-          className="form__input"
+          className={style.input}
           {...register("confirmPassword", {
             required: "Field is required",
             validate: (value) =>
@@ -85,14 +105,12 @@ const ReactHookForm = () => {
           placeholder="Confirm password"
         />
         {formState.errors.confirmPassword && (
-          <p className="error-message">
+          <p className={style.error__message}>
             {formState.errors.confirmPassword.message}
           </p>
         )}
       </div>
-      <button className="form__button" type="submit">
-        Register
-      </button>
+      <ButtonRegister />
     </form>
   );
 };

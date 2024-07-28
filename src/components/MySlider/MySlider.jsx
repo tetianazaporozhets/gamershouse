@@ -1,11 +1,11 @@
-import React, { memo } from "react";
+import { memo } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Item1 from "../../images/Item1.jpg";
 import Item2 from "../../images/Item2.jpg";
 import Item3 from "../../images/Item3.jpg";
-import "./MySlider.css";
+import styles from "./MySlider.module.scss";
 
 const MySlider = () => {
   const settings = {
@@ -14,19 +14,37 @@ const MySlider = () => {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1439,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+    nextArrow: <div className={styles.slickNext}></div>,
+    prevArrow: <div className={styles.slickPrev}></div>,
   };
 
   return (
-    <div className="slider-container">
+    <div className={styles.slider}>
       <Slider {...settings}>
-        <div className="slider-item">
-          <img className="slider-image" src={Item1} alt="" />
+        <div className={styles.slide}>
+          <img className={styles.img} src={Item1} alt="PS5" />
         </div>
-        <div className="slider-item">
-          <img className="slider-image" src={Item2} alt="" />
+        <div className={styles.item}>
+          <img className={styles.img} src={Item2} alt="Laptop" />
         </div>
-        <div className="slider-item">
-          <img className="slider-image" src={Item3} alt="" />
+        <div className={styles.item}>
+          <img className={styles.img} src={Item3} alt="Steam-deck" />
         </div>
       </Slider>
     </div>

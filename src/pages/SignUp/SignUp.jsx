@@ -1,11 +1,11 @@
 import React, { memo } from "react";
-import "./SignUp.css";
+import style from "./SignUp.module.scss";
 import ReactHookForm from "../../components/ReactHookForm/ReactHookForm";
 
 const SignUp = () => {
   return (
-    <div className="registration">
-      <h2 className="registration__subtitle">Sign up</h2>
+    <div className={style.registration}>
+      <h2>Sign up</h2>
       <ReactHookForm />
     </div>
   );

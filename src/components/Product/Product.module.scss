@@ -1,0 +1,68 @@
+@import "../../_variables";
+
+.product {
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  background-color: $background-box-color;
+  overflow: hidden;
+  transition: transform 0.3s;
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+.img {
+  height: 280px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  @media screen and (max-width: 1023px) {
+    height: 230px;
+  }
+  @media screen and (max-width: 767px) {
+    height: 200px;
+  }
+}
+.name {
+  display: inline-block;
+  font-weight: 400;
+  color: $black-color;
+  margin: 0 0 13px 0;
+  &:hover {
+    color: $hover-color;
+    transition: 0.5s all ease;
+  }
+}
+.brand {
+  font-size: 12px;
+  line-height: 16px;
+  margin: 0 0 24px 0;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  flex-grow: 1;
+  @media screen and (max-width: 480px) {
+    padding: 10px;
+  }
+}
+.content {
+  flex-grow: 1;
+}
+.price__box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+}
+.price {
+  font-size: 20px;
+  line-height: 24px;
+  margin: 0;
+  @media screen and (max-width: 767px) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}

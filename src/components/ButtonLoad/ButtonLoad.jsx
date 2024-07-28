@@ -1,9 +1,9 @@
 import { memo } from "react";
-import "./ButtonLoad.css";
+import styles from "./ButtonLoad.module.scss";
 
 const ButtonLoad = ({ onClick }) => {
   return (
-    <button className="button__load" onClick={onClick}>
+    <button className={styles.button} onClick={onClick}>
       Load more
     </button>
   );

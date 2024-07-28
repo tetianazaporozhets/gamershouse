@@ -1,5 +1,5 @@
 import React, { memo, useCallback, useContext } from "react";
-import "./ProductsDetail.css";
+import styles from "./ProductsDetail.module.scss";
 import { useNavigate } from "react-router-dom";
 import { CartContext } from "../CartContext";
 import ButtonAddToCart from "../ButtonAddToCart/ButtonAddToCart";
@@ -13,20 +13,16 @@ const ProductsDetail = ({ product }) => {
     navigate("/cart");
   }, [handleAddToCart, product, navigate]);
   return (
-    <div className="product-detail">
-      <div className="product-detail__product">
-        <img
-          className="product-detail__image"
-          src={product.image}
-          alt={product.name}
-        />
-        <div className="product-detail__info">
-          <h4 className="product-detail__subtitle">{product.name}</h4>
-          <p className="product-detail__brand">{product.brand}</p>
+    <div className={styles.detail}>
+      <div className={styles.product}>
+        <img src={product.image} alt={product.name} />
+        <div className={styles.info}>
+          <h4 className={styles.name}>{product.name}</h4>
+          <p className={styles.brand}>{product.brand}</p>
         </div>
       </div>
-      <div className="product-detail__price-info">
-        <p className="product-detail__price">
+      <div className={styles.price__info}>
+        <p className={styles.price}>
           <span>Item price:</span> {product.price}zł
         </p>
         <ButtonAddToCart product={product} onAddToCart={addToCart} />

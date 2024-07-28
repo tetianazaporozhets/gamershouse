@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 import { useState, useEffect } from "react";
-import "./Search.css";
+import styles from "./Search.module.scss";
 import { useLocation } from "react-router-dom";
 
 const Search = ({ products, onSelectProduct }) => {
@@ -35,16 +35,16 @@ const Search = ({ products, onSelectProduct }) => {
   };
 
   return (
-    <div className="search__container">
+    <div className={styles.search__container}>
       <input
+        className={styles.search__input}
         type="text"
-        className="search__input"
         placeholder="Search for products..."
         value={searchQuery}
         onChange={handleChange}
       />
       {searchQuery && (
-        <ul className="search__results">
+        <ul className={styles.results}>
           {searchResults.length > 0 ? (
             searchResults.map((product) => (
               <li key={product.id} onClick={() => handleSelectProduct(product)}>
@@ -52,7 +52,7 @@ const Search = ({ products, onSelectProduct }) => {
               </li>
             ))
           ) : (
-            <li className="search__no-results">Product not found</li>
+            <li className={styles.no__results}>Product not found</li>
           )}
         </ul>
       )}

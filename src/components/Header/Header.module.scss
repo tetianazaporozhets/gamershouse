@@ -1,27 +1,35 @@
+@import "../../_variables";
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 70px;
+  margin: 0 0 70px 0;
   position: relative;
+  gap: 20px;
+  @media screen and (max-width: 767px) {
+    margin: 0 0 40px 0;
+  }
 }
-.header__nav {
+nav {
   display: flex;
   gap: 20px;
 }
-.header__link {
+.link {
   position: relative;
   text-decoration: none;
-  color: var(--text-color);
+  color: $text-color;
   font-weight: 500;
   text-transform: uppercase;
+  white-space: nowrap;
   cursor: pointer;
   transition: 0.5s all ease;
+  &:hover {
+    color: $hover-color;
+  }
 }
-.header__link:hover {
-  color: var(--hover-color);
-}
-.header__count {
+
+nav span {
   position: absolute;
   display: flex;
   justify-content: center;
@@ -29,7 +37,7 @@
   top: -10px;
   right: -10px;
   background-color: white;
-  color: var(--text-color);
+  color: $text-color;
   border-radius: 50%;
   width: 13px;
   height: 13px;
@@ -38,9 +46,9 @@
 .header img:hover {
   cursor: pointer;
 }
-.header__cart-message {
+.message {
   position: absolute;
-  top: -50px; /* Начальная позиция выше экрана */
+  top: -50px;
   left: 90%;
   transform: translateX(-50%);
   background-color: #fff;
@@ -49,9 +57,9 @@
   border-radius: 10px;
   z-index: 1000;
   text-align: center;
-  transition: top 0.5s ease; /* Переход для анимации */
+  transition: top 0.5s ease;
 }
 
-.header__cart-message.show {
+.message.show {
   top: 40px;
 }

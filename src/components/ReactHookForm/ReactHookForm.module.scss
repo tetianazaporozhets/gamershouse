@@ -1,18 +1,25 @@
+@import "../../_variables";
+
 .form {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.form__input {
+.input {
   box-sizing: border-box;
   max-width: 690px;
   width: 100%;
-  border: 0.5px solid var(--border-color);
+  font-size: 16px;
+  border: 0.5px solid $border-color;
   border-radius: 5px;
   padding: 15px 25px;
   margin: 0 0 15px 0;
+  &::placeholder {
+    opacity: 0.5;
+  }
 }
-.form__field {
+
+.field {
   display: flex;
   flex-direction: column;
   text-align: left;
@@ -20,20 +27,12 @@
   max-width: 690px;
   width: 100%;
 }
-.error-message {
+.error__message {
   color: red;
   margin: 0;
 }
-.form__field label {
+.field label {
   margin: 0 0 7px 0;
   display: block;
   text-align: left;
-}
-.form__button {
-  background: var(--button-light-color);
-  border: none;
-  padding: 13px 20px;
-  border-radius: 10px;
-  color: var(--button-text-color);
-  cursor: pointer;
 }
