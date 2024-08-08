@@ -1,0 +1,28 @@
+.wrapper {
+  background: rgb(221, 246, 254);
+  background: linear-gradient(
+    180deg,
+    rgba(221, 246, 254, 1) 0%,
+    rgba(247, 233, 255, 1) 100%
+  );
+  padding-top: 50px;
+  @media screen and (max-width: 767px) {
+    padding-top: 30px;
+  }
+}
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  @media screen and (max-width: 1439px) {
+    max-width: 780px;
+  }
+  @media screen and (max-width: 1023px) {
+    max-width: 700px;
+  }
+  @media screen and (max-width: 767px) {
+    max-width: 420px;
+  }
+  @media screen and (max-width: 480px) {
+    max-width: 350px;
+  }
+}

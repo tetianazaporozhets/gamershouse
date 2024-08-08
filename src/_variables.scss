@@ -1,0 +1,20 @@
+$black-color: #000;
+$button-text-color: white;
+$background-box-color: #ffe1dd;
+$text-color: #201e1e;
+$gradient-start-1: rgba(252, 164, 164, 1);
+$gradient-end-1: rgba(161, 129, 255, 1);
+$gradient-start-2: rgba(173, 144, 255, 1);
+$gradient-end-2: rgba(138, 96, 255, 1);
+$gradient-start-3: rgba(255, 100, 212, 1);
+$gradient-end-3: rgba(139, 158, 255, 1);
+$border-color: #c3c1c1;
+$hover-color: #8a60ff;
+
+$button-light-color: linear-gradient(
+  180deg,
+  $gradient-start-1,
+  $gradient-end-1
+);
+$button-dark-color: linear-gradient(180deg, $gradient-start-2, $gradient-end-2);
+$gradient-title: linear-gradient(180deg, $gradient-start-3, $gradient-end-3);

@@ -1,0 +1,54 @@
+@import "../../_variables";
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+.slider {
+  width: 100%;
+  margin: 0 auto;
+}
+.slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.img {
+  height: auto;
+  border-radius: 15px;
+  @media screen and (max-width: 1023px) {
+    width: 340px;
+  }
+  @media screen and (max-width: 767px) {
+    width: 200px;
+  }
+  @media screen and (max-width: 480px) {
+    width: 170px;
+  }
+}
+:global {
+  .slick-next:before,
+  .slick-prev:before {
+    content: "";
+    height: 17px;
+    width: 17px;
+    position: absolute;
+    border-left: 2px solid $text-color;
+    border-bottom: 2px solid $text-color;
+    opacity: 100%;
+    top: 9px;
+    right: 9px;
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+  .slick-next:before {
+    transform: rotate(-135deg);
+  }
+
+  .slick-prev:before {
+    transform: rotate(45deg);
+  }
+
+  .slick-track {
+    margin: 0 0 10px 0;
+  }
+}

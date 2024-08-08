@@ -1,0 +1,13 @@
+@import "../../_variables";
+
+.button {
+  background: $button-dark-color;
+  min-width: 180px;
+  font-size: 13px;
+  line-height: 17px;
+  padding: 12px 15px;
+  color: $button-text-color;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
