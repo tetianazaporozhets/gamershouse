@@ -9,15 +9,6 @@ const SignUp = () => {
       <ReactHookForm />
     </div>
   );
-<<<<<<< HEAD
-  //  <div>
-  //    <Link to="/signup">
-  //      <img className="signup__icon" src={SignUpIcon} alt="" />
-  //      Sign up
-  //    </Link>
-  //  </div>
-=======
->>>>>>> mentor/main
 };
 
 export default memo(SignUp);
