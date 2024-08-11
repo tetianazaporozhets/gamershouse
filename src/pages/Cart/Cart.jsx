@@ -1,9 +1,10 @@
 import React, { memo, useContext } from "react";
 import style from "./Cart.module.scss";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import DeleteIcon from "../../assets/icons/delete.svg";
 import CartContext from "../../components/CartContext";
 import ButtonPayment from "../../components/ButtonPayment/ButtonPayment";
+import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 
 const Cart = () => {
   const { store, handleRemoveFromCart, handleQuantityChange } =
@@ -12,14 +13,7 @@ const Cart = () => {
   const goBack = () => navigate(-1);
   return (
     <div className={style.cart}>
-      <ul className={style.list}>
-        <li className={style.item}>
-          <Link className={style.link} onClick={goBack}>
-            Homepage
-          </Link>
-        </li>
-        <li className={style.item}>Product</li>
-      </ul>
+      <Breadcrumbs goBack={goBack} />
       <h2 className={style.subtitle}>Your cart</h2>
       <div className={style.cart__block}>
         <div className={style.cart__products}>

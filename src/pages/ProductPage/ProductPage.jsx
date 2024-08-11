@@ -1,7 +1,8 @@
 import React, { memo, useMemo } from "react";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import style from "./ProductPage.module.scss";
 import ProductsDetail from "../../components/ProductsDetail/ProductsDetail";
+import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 
 const ProductPage = ({ products }) => {
   const { productId } = useParams();
@@ -18,14 +19,7 @@ const ProductPage = ({ products }) => {
 
   return (
     <div className={style.product__page}>
-      <ul className={style.list}>
-        <li className={style.item}>
-          <Link className={style.link} onClick={goBack}>
-            Homepage
-          </Link>
-        </li>
-        <li className={style.item}>Product</li>
-      </ul>
+      <Breadcrumbs goBack={goBack} />
       <h3>{product.name}</h3>
       <ProductsDetail product={product} />
     </div>

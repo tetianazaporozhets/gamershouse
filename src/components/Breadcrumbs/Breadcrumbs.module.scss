@@ -1,0 +1,31 @@
+@import "../../_variables";
+
+.list {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  gap: 10px;
+}
+.item {
+  position: relative;
+  margin-right: 5px;
+  &:first-child::after {
+    display: inline-block;
+    content: "-";
+    position: absolute;
+    right: -9px;
+    font-size: 16px;
+  }
+  &:last-child {
+    opacity: 50%;
+  }
+  .link {
+    text-decoration: none;
+    color: $black-color;
+    &:hover {
+      cursor: pointer;
+      color: $hover-color;
+      transition: 0.5s all ease;
+    }
+  }
+}
