@@ -8,10 +8,18 @@ const ProductsDetail = ({ product }) => {
   const { handleAddToCart } = useContext(CartContext);
   const navigate = useNavigate();
 
+<<<<<<< HEAD
   const addToCart = useCallback(() => {
     handleAddToCart(product);
     navigate("/cart");
   }, [handleAddToCart, product, navigate]);
+=======
+  const addToCart = () => {
+    handleAddToCart(product);
+    navigate("/cart");
+  };
+
+>>>>>>> mentor/main
   return (
     <div className={styles.detail}>
       <div className={styles.product}>
