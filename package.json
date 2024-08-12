@@ -2,6 +2,7 @@
   "name": "gamershouse",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://tetianazaporozhets.github.io/gamershouse/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -23,7 +24,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "postbuild": "copyfiles -u 1 404.html build/"
   },
   "eslintConfig": {
     "extends": [
@@ -45,7 +47,7 @@
   },
   "devDependencies": {
     "@babel/plugin-transform-private-property-in-object": "^7.24.7",
+    "copyfiles": "^2.4.1",
     "gh-pages": "^6.1.1"
-  },
-  "homepage": "https://github.com/tetianazaporozhets/gamershouse.git"
+  }
 }
